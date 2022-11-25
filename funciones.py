@@ -21,6 +21,9 @@ cartas = {
     chr(0x1f0ae): 10, 
 } 
 
+
+
+
 lista_cartas = list(cartas.keys())
 
 J = [] #lista vacía con las cartas del jugador
@@ -221,6 +224,10 @@ def jugar_blackjack():
     global J
     global C
     print('Bienvenido al juego del Blackjack, el objetivo es conseguir una puntuación de 21 o lo más cercana posible.')
+    print("Valor de cada carta: ")
+    for carta in sorted(cartas.keys()):
+        print("La carta {} vale {}".format(carta, cartas[carta]))
+        
     jugar()
     while pedir_entrada_si_o_no('¿Quieres jugar otra partida? (s/n): ') == True:
         J=[]
